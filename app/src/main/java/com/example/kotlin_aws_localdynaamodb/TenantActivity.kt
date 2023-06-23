@@ -2,6 +2,7 @@ package com.example.kotlin_aws_localdynaamodb
 
 import android.app.AlertDialog
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -154,11 +155,18 @@ class RawDialogFragment : DialogFragment() {
         // ダイアログのタイトルを設定
         builder.setTitle("Raw Dialog")
         // ダイアログのメッセージを設定
-        builder.setMessage("ID: ${arguments?.getString("id")}, Name: ${arguments?.getString("name")} でよろしいですか？")
+        builder.setMessage("ID: ${arguments?.getString("id")},  氏名: ${arguments?.getString("name")} さんでよろしいですか？")
         // ダイアログのボタンを設定
         builder.setPositiveButton("OK") { dialog, id ->
             // OKボタンが押されたときの処理
             Toast.makeText(activity, "OK", Toast.LENGTH_SHORT).show()
+            // RecordActivityにIntentする
+            val intent = Intent(activity, RecordActivity::class.java)
+            // ダイアログから受け取ったデータをIntentにセットする
+            intent.putExtra("id", arguments?.getString("id"))
+            intent.putExtra("name", arguments?.getString("name"))
+            // RecordActivityを起動する
+            startActivity(intent)
         }
         builder.setNegativeButton("Cancel") { dialog, id ->
             // Cancelボタンが押されたときの処理

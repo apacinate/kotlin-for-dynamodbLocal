@@ -26,5 +26,6 @@
         </activity>
         <activity android:name="com.example.kotlin_aws_localdynaamodb.MainActivity2" />
         <activity android:name=".TenantActivity" />
+        <activity android:name=".RecordActivity" />
     </application>
 </manifest>

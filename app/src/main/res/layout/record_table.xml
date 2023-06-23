@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="*"
+    android:shrinkColumns="*"
+    android:divider="@drawable/table_divider"
+    android:showDividers="beginning|middle|end">
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:showDividers="beginning|middle|end">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="ID" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="氏名" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/table_divider"
+        android:showDividers="beginning|middle|end">
+
+        <TextView
+            android:id="@+id/id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/table_divider"
+        android:showDividers="beginning|middle|end">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="Vital" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/table_divider"
+        android:showDividers="beginning|middle|end">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="体温" />
+
+        <TextView
+            android:id="@+id/temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/table_divider"
+        android:showDividers="beginning|middle|end">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="血圧上" />
+
+        <TextView
+            android:id="@+id/pressure_high"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/table_divider"
+        android:showDividers="beginning|middle|end">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="血圧下" />
+
+        <TextView
+            android:id="@+id/pressure_low"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/table_divider"
+        android:showDividers="beginning|middle|end">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="脈拍" />
+
+        <TextView
+            android:id="@+id/pulse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/table_divider"
+        android:showDividers="beginning|middle|end">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="SpO2" />
+
+        <TextView
+            android:id="@+id/spo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/table_divider"
+        android:showDividers="beginning|middle|end">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="食事" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/table_divider"
+        android:showDividers="beginning|middle|end">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="主食" />
+
+        <TextView
+            android:id="@+id/staple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/table_divider"
+        android:showDividers="beginning|middle|end">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="副主食" />
+
+        <TextView
+            android:id="@+id/sidedish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/table_divider"
+        android:showDividers="beginning|middle|end">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="汁物" />
+
+        <TextView
+            android:id="@+id/soup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="" />
+    </TableRow>
+
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/table_divider"
+        android:showDividers="beginning|middle|end">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="水分" />
+
+        <TextView
+            android:id="@+id/hydration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/table_divider"
+        android:showDividers="beginning|middle|end">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="服薬" />
+
+        <TextView
+            android:id="@+id/medicine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="" />
+    </TableRow>
+
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/table_divider"
+        android:showDividers="beginning|middle|end">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="入浴" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="" />
+    </TableRow>
+
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/table_divider"
+        android:showDividers="beginning|middle|end">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="タイプ" />
+
+        <TextView
+            android:id="@+id/bath"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/table_divider"
+        android:showDividers="beginning|middle|end">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="特記記録" />
+
+        <TextView
+            android:id="@+id/special"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_divider"
+            android:text="" />
+    </TableRow>
+</TableLayout>

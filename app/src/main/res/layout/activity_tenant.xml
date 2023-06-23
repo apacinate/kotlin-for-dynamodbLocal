@@ -39,8 +39,6 @@
                 />
         </TableRow>
 
-        <!-- データ行はコードで動的に追加する -->
-
-    </TableLayout>
+     </TableLayout>
 
 </LinearLayout>
