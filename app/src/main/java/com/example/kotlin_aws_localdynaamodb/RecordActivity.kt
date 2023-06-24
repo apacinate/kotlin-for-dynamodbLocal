@@ -2,11 +2,13 @@ package com.example.kotlin_aws_localdynaamodb
 
 import android.app.AlertDialog
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.widget.*
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.lifecycleScope
@@ -52,6 +54,15 @@ class RecordActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 // 何も選択されなかった場合の処理
             }
+        }
+
+        //前の画面に戻る
+        val button: Button = findViewById<Button>(R.id.back_button)
+        button.setOnClickListener{
+            val intent = Intent(this,TenantActivity::class.java)
+            val text = "Hello,Kotlin!"
+            intent.putExtra("TEXT_KEY",text)
+            startActivity(intent)
         }
     }
 }
