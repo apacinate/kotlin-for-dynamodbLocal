@@ -14,7 +14,8 @@
         <TableRow
             android:id="@+id/header_row"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:showDividers="beginning|middle|end">
 
             <TextView
                 android:id="@+id/id"
@@ -25,6 +26,7 @@
                 android:background="#00FF00"
                 android:padding="10dp"
                 android:layout_margin="5dp"
+                android:divider="@drawable/table_divider"
                 />
 
             <TextView
@@ -36,6 +38,7 @@
                 android:background="#00FF00"
                 android:padding="10dp"
                 android:layout_margin="5dp"
+                android:divider="@drawable/table_divider"
                 />
         </TableRow>
 

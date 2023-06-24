@@ -5,10 +5,8 @@ import android.app.Dialog
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.widget.TableLayout
-import android.widget.TableRow
-import android.widget.TextView
-import android.widget.Toast
+import android.view.View
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.lifecycleScope
@@ -40,5 +38,20 @@ class RecordActivity : AppCompatActivity() {
         endpoint = properties.getProperty("ENDPOINT")
         region = properties.getProperty("REGION")
 
+        // Spinnerの取得
+        val spinner = findViewById<Spinner>(R.id.spinner)
+        val array = resources.getStringArray(R.array.list) // リストを取得
+        val arrayAdapter = ArrayAdapter(this, R.layout.spinner_item, array) // アダプターを作成
+        spinner.adapter = arrayAdapter // アダプターをセット
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener { // リスナーを実装
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                val item = spinner.selectedItem.toString() // 選択されたアイテムを取得
+                Toast.makeText(this@RecordActivity, "選択されたタイプ： $item", Toast.LENGTH_SHORT).show() // トーストで表示
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // 何も選択されなかった場合の処理
+            }
+        }
     }
 }

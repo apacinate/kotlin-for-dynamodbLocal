@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Kotlin-AWS-LocalDynaamoDB</string>
     <string name="ID">ID</string>
+    <string-array name="list">
+        <item></item>
+        <item>一般浴</item>
+        <item>シャワー浴</item>
+        <item>清拭</item>
+        <item>中止</item>
+    </string-array>
 </resources>
