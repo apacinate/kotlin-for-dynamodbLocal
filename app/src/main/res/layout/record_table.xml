@@ -8,343 +8,367 @@
     android:shrinkColumns="*"
     android:divider="@drawable/table_divider"
     android:showDividers="beginning|middle|end">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary">
+
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="戻る" />
+        <Button
+            android:id="@+id/record_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="記録" />
+
+        <Button
+            android:id="@+id/stop_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="停止" />
+
+    </androidx.appcompat.widget.Toolbar>
 
     <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#00FF00"
         android:showDividers="beginning|middle|end">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:background="@drawable/table_divider"
             android:text="ID" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:background="@drawable/table_divider"
             android:text="氏名" />
     </TableRow>
 
     <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:divider="@drawable/table_divider"
         android:showDividers="beginning|middle|end">
 
         <TextView
             android:id="@+id/id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/table_divider"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/table_divider2"
             android:text="" />
 
         <TextView
             android:id="@+id/name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/table_divider"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/table_divider2"
             android:text="" />
     </TableRow>
 
     <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:divider="@drawable/table_divider"
         android:showDividers="beginning|middle|end">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/table_divider"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/table_divider3"
             android:text="Vital" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/table_divider"
-            android:text="" />
     </TableRow>
 
     <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:divider="@drawable/table_divider"
         android:showDividers="beginning|middle|end">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:background="@drawable/table_divider"
             android:text="体温" />
 
         <TextView
+            android:layout_weight="1"
             android:id="@+id/temperature"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/table_divider"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/table_divider2"
             android:text="" />
     </TableRow>
 
     <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:divider="@drawable/table_divider"
         android:showDividers="beginning|middle|end">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:background="@drawable/table_divider"
             android:text="血圧上" />
 
         <TextView
+            android:layout_weight="1"
             android:id="@+id/pressure_high"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/table_divider"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/table_divider2"
             android:text="" />
     </TableRow>
 
     <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:divider="@drawable/table_divider"
         android:showDividers="beginning|middle|end">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:background="@drawable/table_divider"
             android:text="血圧下" />
 
         <TextView
             android:id="@+id/pressure_low"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/table_divider"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/table_divider2"
             android:text="" />
     </TableRow>
 
     <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:divider="@drawable/table_divider"
         android:showDividers="beginning|middle|end">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:background="@drawable/table_divider"
             android:text="脈拍" />
 
         <TextView
             android:id="@+id/pulse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/table_divider"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/table_divider2"
             android:text="" />
     </TableRow>
 
     <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:divider="@drawable/table_divider"
         android:showDividers="beginning|middle|end">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:background="@drawable/table_divider"
             android:text="SpO2" />
 
         <TextView
             android:id="@+id/spo2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/table_divider"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/table_divider2"
             android:text="" />
     </TableRow>
 
     <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:divider="@drawable/table_divider"
         android:showDividers="beginning|middle|end">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/table_divider"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/table_divider3"
             android:text="食事" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/table_divider"
-            android:text="" />
     </TableRow>
 
     <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:divider="@drawable/table_divider"
         android:showDividers="beginning|middle|end">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:background="@drawable/table_divider"
             android:text="主食" />
 
         <TextView
             android:id="@+id/staple"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/table_divider"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/table_divider2"
             android:text="" />
     </TableRow>
 
     <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:divider="@drawable/table_divider"
         android:showDividers="beginning|middle|end">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:background="@drawable/table_divider"
             android:text="副主食" />
 
         <TextView
             android:id="@+id/sidedish"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/table_divider"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@drawable/table_divider2"
             android:text="" />
     </TableRow>
 
     <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:divider="@drawable/table_divider"
         android:showDividers="beginning|middle|end">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:background="@drawable/table_divider"
             android:text="汁物" />
 
         <TextView
             android:id="@+id/soup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/table_divider"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@drawable/table_divider2"
             android:text="" />
     </TableRow>
 
 
     <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:divider="@drawable/table_divider"
         android:showDividers="beginning|middle|end">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:background="@drawable/table_divider"
             android:text="水分" />
 
         <TextView
             android:id="@+id/hydration"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/table_divider"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@drawable/table_divider2"
             android:text="" />
     </TableRow>
 
     <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:divider="@drawable/table_divider"
         android:showDividers="beginning|middle|end">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:background="@drawable/table_divider"
             android:text="服薬" />
 
         <TextView
             android:id="@+id/medicine"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/table_divider"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@drawable/table_divider2"
             android:text="" />
     </TableRow>
 
 
     <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:divider="@drawable/table_divider"
         android:showDividers="beginning|middle|end">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/table_divider"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/table_divider3"
             android:text="入浴" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/table_divider"
-            android:text="" />
     </TableRow>
 
+    <!-- レイアウトファイル -->
+    <TableRow
+        android:layout_weight="1"
+        android:divider="@drawable/table_divider"
+        android:showDividers="beginning|middle|end">
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/table_divider2"
+            android:hint="入浴タイプ" />
+    </TableRow>
 
     <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:divider="@drawable/table_divider"
         android:showDividers="beginning|middle|end">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/table_divider"
-            android:text="タイプ" />
-
-        <TextView
-            android:id="@+id/bath"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/table_divider"
-            android:text="" />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:divider="@drawable/table_divider"
-        android:showDividers="beginning|middle|end">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/table_divider"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/table_divider3"
             android:text="特記記録" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_weight="1"
+        android:divider="@drawable/table_divider"
+        android:showDividers="beginning|middle|end">
 
         <TextView
             android:id="@+id/special"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/table_divider"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/table_divider2"
             android:text="" />
     </TableRow>
 </TableLayout>

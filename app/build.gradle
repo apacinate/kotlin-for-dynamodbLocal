@@ -37,6 +37,9 @@ android {
         exclude 'META-INF/io.netty.versions.properties'
         exclude 'META-INF/INDEX.LIST'
     }
+    buildFeatures {
+        dataBinding true
+    }
 }
 
 dependencies {
