@@ -64,5 +64,17 @@ class RecordActivity : AppCompatActivity() {
             intent.putExtra("TEXT_KEY",text)
             startActivity(intent)
         }
+
+        // Intent からデータを取り出す
+        val id = intent.getStringExtra("id")
+        val name = intent.getStringExtra("name")
+
+        val idTextView = findViewById<TextView>(R.id.id)
+        val nameTextView = findViewById<TextView>(R.id.name)
+
+        // TextView の id を使ってテキストを設定する
+        idTextView.text = id
+        nameTextView.text = name
+
     }
 }
