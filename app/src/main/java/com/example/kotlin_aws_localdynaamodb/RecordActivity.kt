@@ -96,65 +96,42 @@ class RecordActivity : AppCompatActivity() {
         // Activity での生成になるので、ApplicationContextを渡してやる
         speechRecognizer = SpeechRecognizer.createSpeechRecognizer(applicationContext)
         speechRecognizer?.setRecognitionListener(createRecognitionListenerStringStream {  result ->
-            var RESULT = result.replace(" ", "")
+            if(result.contains("体温")){
+                    Log.d("TAG","BBB")
+                    // result に数値が入っている場合の処理
+                    val list = result.split("体温")
+                    val text = list[1] //数値部分
+                    val firstFour = text.substring(0, 4) // 頭の4文字
+                    //℃や度が入っているかもしれないので
+                    var split =""
+                    if(firstFour.contains("度")){
+                        split = firstFour.split("度").toString()
+                        temperatureTextView.text = split
+                    } else if(firstFour.contains("℃")){
+                        split = firstFour.split("℃").toString()
+                        temperatureTextView.text = split
+                    } else {
+                        //val number = list[1].toInt() // 数値部分
+                        temperatureTextView.text = firstFour
+                    }
+                Log.d("temperature", result)
 
-            Log.d("TAG", "AAA")
-            Log.d("RESULT", RESULT)
-            // 正規表現を使って数字を抽出する
-            val temperaturePattern = Regex("体温(\\d+\\.?\\d*)")
-            val pressurePattern = Regex("血圧(\\d+)(-(\\d+)|の(\\d+)| (\\d+)|(,)(\\d+))")
-            val pulsePattern = Regex("脈拍(\\d+)")
-            val spo2Pattern = Regex("SpO2(\\d+)|spo2(\\d+)|SBO2(\\d+)|sbo2(\\d+)|spo2-(\\d+)|sbo2-(\\d+)")
-            // マッチする部分を探して値を取得する
-            val temperatureMatch = temperaturePattern.find(RESULT)
-            val pressureMatch = pressurePattern.find(RESULT)
-            val pulseMatch = pulsePattern.find(RESULT)
-            val spo2Match = spo2Pattern.find(RESULT)
-            // マッチする部分がnullでないか確認してテキストビューを更新する
-            if (temperatureMatch != null) {
-                val temperature = temperatureMatch.groupValues[1]
-                temperatureTextView.text = temperature
-                Log.d("temperature", temperature)
-            }
-            if (pressureMatch != null) {
-                val pressureHigh = pressureMatch.groupValues[1]
-                var pressureLow = pressureMatch.groupValues[2]
-                pressureLow = pressureLow.replace(" ", "")
-                pressureLow = pressureLow.replace("の", "")
-                pressureLow = pressureLow.replace("-", "")
-                pressureLow = pressureLow.replace(",", "")
-                pressureHighTextView.text = pressureHigh
-                pressureLowTextView.text = pressureLow
-                Log.d("pressure", "$pressureHigh-$pressureLow")
-            }
-            if (pulseMatch != null) {
-                val pulse = pulseMatch.groupValues[1]
-                pulseTextView.text = pulse
-                Log.d("pulse", pulse)
-            }
-            if (spo2Match != null) {
-                if(spo2Match.groupValues[1] != "") {
-                    val spo2 = spo2Match.groupValues[1]
-                    spo2TextView.text = spo2
-                    Log.d("spo2", spo2)
-                } else if(spo2Match.groupValues[2] != "") {
-                    val spo2 = spo2Match.groupValues[2]
-                    spo2TextView.text = spo2
-                    Log.d("spo2", spo2)
-                } else if(spo2Match.groupValues[3] != "") {
-                    val spo2 = spo2Match.groupValues[3]
-                    spo2TextView.text = spo2
-                    Log.d("spo2", spo2)
-                } else if(spo2Match.groupValues[4] != "") {
-                    val spo2 = spo2Match.groupValues[4]
-                    spo2TextView.text = spo2
-                    Log.d("spo2", spo2)
-                } else if(spo2Match.groupValues[5] != "") {
-                    val spo2 = spo2Match.groupValues[5]
-                    spo2TextView.text = spo2
-                    Log.d("spo2", spo2)
-                }
-                else {}
+            } else if(result.contains("血圧")){
+                val list = result.split("血圧")
+                    // result に数値が入っている場合の処理
+                    val text = list[1] //数値部分
+                    var split =""
+                    if(text.contains("の")){
+                        split[] = text.split("の").toString()
+                    } else if(text.contains("-")){
+                        split = text.split("-").toString()
+                    }else if(text.contains(",")) {
+                        split = text.split(",").toString()
+                    }
+                    val first = split // 頭の3文字
+                    pressureHighTextView.text = first
+                    val second = split// 頭の3文字
+                    pressureLowTextView.text = second
             }
         })
 
