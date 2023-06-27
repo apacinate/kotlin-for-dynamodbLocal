@@ -362,8 +362,8 @@
         android:divider="@drawable/table_divider"
         android:showDividers="beginning|middle|end">
 
-        <Spinner
-            android:id="@+id/spinner"
+        <AutoCompleteTextView
+            android:id="@+id/autocomplete"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
