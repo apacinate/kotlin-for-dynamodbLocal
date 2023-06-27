@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import java.util.*
 
 
 class RecordActivity : AppCompatActivity() {
@@ -58,12 +59,23 @@ class RecordActivity : AppCompatActivity() {
         val id = intent.getStringExtra("id")
         val name = intent.getStringExtra("name")
 
-
+        val recordButtonTextView = findViewById<TextView>(R.id.record_button)
+        val stopButtonTextView = findViewById<TextView>(R.id.stop_button)
         val idTextView = findViewById<TextView>(R.id.id)
         val nameTextView = findViewById<TextView>(R.id.name)
         val temperatureTextView = findViewById<TextView>(R.id.temperature)
-        val recordButtonTextView = findViewById<TextView>(R.id.record_button)
-        val stopButtonTextView = findViewById<TextView>(R.id.stop_button)
+        val pressureHighTextView = findViewById<TextView>(R.id.pressure_high)
+        val pressureLowTextView = findViewById<TextView>(R.id.pressure_low)
+        val pulseTextView = findViewById<TextView>(R.id.pulse)
+        val spo2TextView = findViewById<TextView>(R.id.spo2)
+        val stapleTextView = findViewById<TextView>(R.id.staple)
+        val sidedishTextView = findViewById<TextView>(R.id.sidedish)
+        val soupTextView = findViewById<TextView>(R.id.soup)
+        val hydrationTextView = findViewById<TextView>(R.id.hydration)
+        val medicineTextView = findViewById<TextView>(R.id.medicine)
+        val bathTextView = findViewById<Spinner>(R.id.spinner)
+        val specialTextView = findViewById<TextView>(R.id.special)
+
 
         // setOnClickListener でクリック動作を登録し、クリックで音声入力が開始するようにする
         recordButtonTextView.setOnClickListener { speechRecognizer?.startListening(Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)) }
@@ -78,11 +90,50 @@ class RecordActivity : AppCompatActivity() {
         nameTextView.text = name
 
         ////////////////////////////////////////////////////////////////////////////////
+        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.JAPANESE.toString())
+        speechRecognizer?.startListening(intent)
         // Activity での生成になるので、ApplicationContextを渡してやる
         speechRecognizer = SpeechRecognizer.createSpeechRecognizer(applicationContext)
         speechRecognizer?.setRecognitionListener(createRecognitionListenerStringStream {  result ->
-            temperatureTextView.text = result
-            Log.d("temperature", result)})
+            if(result.contains("体温")){
+                    Log.d("TAG","BBB")
+                    // result に数値が入っている場合の処理
+                    val list = result.split("体温")
+                    val text = list[1] //数値部分
+                    val firstFour = text.substring(0, 4) // 頭の4文字
+                    //℃や度が入っているかもしれないので
+                    var split =""
+                    if(firstFour.contains("度")){
+                        split = firstFour.split("度").toString()
+                        temperatureTextView.text = split
+                    } else if(firstFour.contains("℃")){
+                        split = firstFour.split("℃").toString()
+                        temperatureTextView.text = split
+                    } else {
+                        //val number = list[1].toInt() // 数値部分
+                        temperatureTextView.text = firstFour
+                    }
+                Log.d("temperature", result)
+
+            } else if(result.contains("血圧")){
+                val list = result.split("血圧")
+                    // result に数値が入っている場合の処理
+                    val text = list[1] //数値部分
+                    var split =""
+                    if(text.contains("の")){
+                        split[] = text.split("の").toString()
+                    } else if(text.contains("-")){
+                        split = text.split("-").toString()
+                    }else if(text.contains(",")) {
+                        split = text.split(",").toString()
+                    }
+                    val first = split // 頭の3文字
+                    pressureHighTextView.text = first
+                    val second = split// 頭の3文字
+                    pressureLowTextView.text = second
+            }
+        })
 
     }
     // Activity のライフサイクルにあわせて SpeechRecognizer を破棄する
@@ -104,7 +155,8 @@ class RecordActivity : AppCompatActivity() {
             override fun onError(error: Int) { onResult("onError") }
             override fun onResults(results: Bundle) {
                 val stringArray = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
-                onResult("onResults " + stringArray.toString())
+                //onResult("onResults " + stringArray.toString())
+                onResult(stringArray?.get(0) ?: "")
             }
         }
     }
